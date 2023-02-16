@@ -17,11 +17,11 @@
             <a class="btn success" th:href="@{/store/add}">Добавить товар</a>
         </div>
         <div class="grid-wrapper">
-            <div class="item-card" th:each="element : ${items}">
+            <a class="item-card" th:each="element : ${items}" th:href="'/store/' + ${element.id}">
                 <img class="item-img" th:src="'/image/get?id=' + ${element.image.id}">
-                <h3 th:text="${element.title}"></h3>
+                <h3 class="coffee-title" th:text="${element.title}"></h3>
                 <p th:text="${element.price} + '$'"></p>
-            </div>
+            </a>
         </div>
     </div>
 </section>

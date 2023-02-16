@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Coffee Store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" th:src="@{~/images/coffee.png}">
+    <link th:href="@{~/css/index.css}" rel="stylesheet">
+    <link th:href="@{~/css/store.css}" rel="stylesheet">
+    <link th:href="@{~/css/item_details.css}" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<section class="item-details">
+    <div class="content" th:each="element : ${item}">
+        <div class="content-content">
+            <img class="item-img" th:src="'/image/get?id=' + ${element.image.id}">
+            <div>
+                <h3 class="coffee-title" th:text="${element.title}"></h3>
+                <p class="price" th:text="${element.price} + '$'"></p>
+            </div>
+            <p class="body" th:text="${element.description}"></p>
+        </div>
+        <div class="content-footer">
+            <form >
+                <a class="btn warning">Редактировать</a>
+            </form>
+            <form id="delete-form" th:action="'/store/' + ${element.id} + '/remove'" method="post">
+                <a class="btn danger" onclick="document.getElementById('delete-form').submit()">Удалить</a>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!--<footer th:insert="~{blocks/footer :: footer}"></footer>-->
+<script th:src="@{~/js/imagePreview.js}"></script>
+</body>
+</html>

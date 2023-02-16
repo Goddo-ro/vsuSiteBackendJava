@@ -8,6 +8,7 @@ import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -26,6 +27,22 @@ public class StoreController {
         System.out.println(items.iterator().next().getImage().getId());
         model.addAttribute("items", items);
         return "store";
+    }
+
+    @GetMapping("/store/{id}")
+    public String getItem(@PathVariable Long id, Model model) {
+        Item item = itemRepository.findById(id).orElseThrow();
+        model.addAttribute("item", item);
+
+        return "store_details";
+    }
+
+    @PostMapping("/store/{id}/remove")
+    public String removeItem(@PathVariable Long id, Model model) {
+        Item item = itemRepository.findById(id).orElseThrow();
+        itemRepository.delete(item);
+
+        return "redirect:/store";
     }
 
     @GetMapping("/store/add")
