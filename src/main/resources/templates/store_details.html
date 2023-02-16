@@ -22,8 +22,8 @@
             <p class="body" th:text="${element.description}"></p>
         </div>
         <div class="content-footer">
-            <form >
-                <a class="btn warning">Редактировать</a>
+            <form id="edit-form" th:action="'/store/' + ${element.id} + '/edit'" method="get">
+                <a class="btn warning" onclick="document.getElementById('edit-form').submit()">Редактировать</a>
             </form>
             <form id="delete-form" th:action="'/store/' + ${element.id} + '/remove'" method="post">
                 <a class="btn danger" onclick="document.getElementById('delete-form').submit()">Удалить</a>

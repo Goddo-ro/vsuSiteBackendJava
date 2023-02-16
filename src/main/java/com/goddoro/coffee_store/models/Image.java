@@ -10,8 +10,6 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Lob
-    @Column(length = 2147483647)
     private byte[] content;
 
     private String name;
