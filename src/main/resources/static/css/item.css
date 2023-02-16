@@ -1,0 +1,37 @@
+
+form {
+    width: 60%;
+    margin-inline: auto;
+    background-color: rgba(250, 250, 250, 0.4);
+    border: 1px solid var(--gray-color);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+form * {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+form .btn {
+    margin-bottom: 0;
+    border: 1px solid var(--green-color);
+}
+
+input,
+textarea {
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    outline: none;
+}
+
+textarea {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 150px;
+    max-height: 300px;
+}

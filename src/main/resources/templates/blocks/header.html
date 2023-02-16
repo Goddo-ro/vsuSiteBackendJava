@@ -1,16 +1,16 @@
 
 <div class="content" xmlns:th="http://www.thymeleaf.org" th:fragment="header">
     <a class="left">
-        <img class="logo" src="images/coffee.png">
+        <img class="logo" th:src="@{~/images/coffee.png}">
         <h1>Coffee Shop</h1>
     </a>
     <div class="links">
-        <a th:classappend="${#ctx.springRequestContext.requestUri} == '/shop' ? 'active' : ''" th:href="@{/shop}">Shop</a>
+        <a th:classappend="${#ctx.springRequestContext.requestUri} == '/store' ? 'active' : ''" th:href="@{/store}">Shop</a>
         <a th:classappend="${#ctx.springRequestContext.requestUri} == '/about' ? 'active' : ''" th:href="@{/about}">About</a>
         <a th:classappend="${#ctx.springRequestContext.requestUri} == '/' ? 'active' : ''" th:href="@{/}">Home</a>
     </div>
     <div class="user">
-        <a href="/cart"><img class="cart" src="images/empty_cart.png" alt="cart"></a>
+        <a href="/cart"><img class="cart" th:src="@{~/images/empty_cart.png}" alt="cart"></a>
         <p class="username">Goddo-ro</p>
     </div>
 </div>

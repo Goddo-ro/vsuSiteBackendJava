@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Coffee Store</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" href="images/coffee.png">
+    <link th:href="@{/css/index.css}" rel="stylesheet">
+    <link th:href="@{/css/store.css}" rel="stylesheet">
+</head>
+<body>
+<header th:insert="~{blocks/header :: header}"></header>
+
+<section class="store">
+    <div class="content">
+        <div class="actions">
+            <input type="text" name="search" placeholder="Поиск..." >
+            <a class="btn success" th:href="@{/store/add}">Добавить товар</a>
+        </div>
+        <div class="grid-wrapper">
+            <div class="item-card" th:each="element : ${items}">
+                <h3 th:text="${element.title}"></h3>
+                <p th:text="${element.price}"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--<footer th:insert="~{blocks/footer :: footer}"></footer>-->
+</body>
+</html>

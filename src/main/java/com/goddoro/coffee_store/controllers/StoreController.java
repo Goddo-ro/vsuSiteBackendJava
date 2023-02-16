@@ -8,15 +8,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class ShopController {
+public class StoreController {
     @Autowired
     private ItemRepository itemRepository;
 
-    @GetMapping("/shop")
+    @GetMapping("/store")
     public String items(Model model) {
         Iterable<Item> items = itemRepository.findAll();
-        System.out.println(items);
         model.addAttribute("items", items);
-        return "shop";
+        return "store";
+    }
+
+    @GetMapping("/store/add")
+    public String addItem(Model model) {
+        return "store_add";
     }
 }

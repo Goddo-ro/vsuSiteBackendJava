@@ -4,6 +4,8 @@
     --black-color: #2C3639;
     --gray-color: #3F4E4F;
     --brown-color: #562B1A;
+    --bright-brown-color: #895B49;
+    --green-color: #508949;
     --white-color: #DCD7C9;
 }
 
@@ -54,7 +56,7 @@ section p {
     margin-inline: auto;
 }
 
-.content:not(footer .content):not(header .content) {
+.content:not(.footer .content):not(header .content) {
     margin-top: -70px;
 }
 
@@ -282,11 +284,10 @@ ol {
 
 /*Footer styles*/
 
-footer {
+.footer {
     position: fixed;
     bottom: 0;
     transform: translateY(-70%);
-    z-index: 100;
     background: var(--gray-color);
     height: 40%;
     width: 50px;
