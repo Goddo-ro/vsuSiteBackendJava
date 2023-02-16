@@ -47,10 +47,21 @@
 .grid-wrapper {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
 }
 
 .item-card {
     border-radius: 12px;
     padding: 12px;
-    border: 1px solid var(--black-color);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.item-card * {
+    margin: 0;
+}
+
+.item-img {
+    height: 180px;
+    width: 100%;
+    border-radius: 16px;
 }

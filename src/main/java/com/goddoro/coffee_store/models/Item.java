@@ -1,29 +1,32 @@
 package com.goddoro.coffee_store.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Item {
     @Id
+    @Column(name = "item_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String title, description, image;
+
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private Image image;
+
+    private String title, description;
     private Double price;
 
     public Item() {
     }
 
-    public Item(Long id, String title, String description, Double price) {
+    public Item(String title, String description, Double price) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.price = price;
     }
 
-    public Item(Long id, String title, String description, String image, Double price) {
+    public Item(String title, String description, Image image, Double price) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -55,11 +58,11 @@ public class Item {
         this.description = description;
     }
 
-    public String getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Image image) {
         this.image = image;
     }
 

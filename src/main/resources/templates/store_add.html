@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/xhtml">
 <head>
     <title>Coffee Store</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -13,7 +13,7 @@
 
 <section class="item">
     <div class="content">
-        <form action="/blog/add" method="post">
+        <form action="/store/add" method="POST" enctype="multipart/form-data">
             <img id="img-preview" th:src="@{~/images/no_image.jpg}">
             <input name="file" type="file" id="selectedFile" style="display: none;" />
             <input id="image" type="button" value="Выбрать..." onclick="document.getElementById('selectedFile').click();" />
