@@ -14,9 +14,11 @@
 <section class="item">
     <div class="content">
         <form action="/blog/add" method="post">
-            <img id="img-preview" >
-            <input type="file" name="image" id="image" accept="image/png, image/jpeg" />
+            <img id="img-preview" th:src="@{~/images/no_image.jpg}">
+            <input name="file" type="file" id="selectedFile" style="display: none;" />
+            <input id="image" type="button" value="Выбрать..." onclick="document.getElementById('selectedFile').click();" />
             <input type="text" name="title" placeholder="Название...">
+            <input name="price" type="number" min="0.1" step="0.1" placeholder="Цена..."/>
             <textarea name="description" placeholder="Описание..."></textarea>
             <button class="btn success" type="submit">Добавить</button>
         </form>

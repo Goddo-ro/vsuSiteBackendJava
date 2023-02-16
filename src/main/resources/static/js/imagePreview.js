@@ -1,8 +1,8 @@
-const imageInput = document.getElementById("image");
+const selectedFile = document.getElementById("selectedFile");
 const image = document.getElementById("img-preview");
 
-imageInput.onchange = e => {
-    const [file] = imageInput.files;
+selectedFile.onchange = e => {
+    const [file] = selectedFile.files;
     if (file) {
         image.src = URL.createObjectURL(file);
     }

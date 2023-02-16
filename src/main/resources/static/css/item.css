@@ -16,7 +16,27 @@ form * {
 
 form .btn {
     margin-bottom: 0;
-    border: 1px solid var(--green-color);
+}
+
+#img-preview {
+    height: 180px;
+    width: 150px;
+    margin-inline: auto;
+    border: 1px solid var(--gray-color);
+    border-radius: 8px;
+    margin-bottom: 4px;
+}
+
+#image {
+    width: 140px;
+    margin-inline: auto;
+    padding: 4px;
+    border: 1px solid var(--white-color);
+}
+
+#image:hover,
+#image:focus {
+    border: 1px solid var(--gray-color);
 }
 
 input,
