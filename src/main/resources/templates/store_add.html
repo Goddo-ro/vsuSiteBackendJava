@@ -17,9 +17,9 @@
             <img id="img-preview" th:src="@{~/images/no_image.jpg}">
             <input name="file" type="file" id="selectedFile" style="display: none;" />
             <input id="image" type="button" value="Выбрать..." onclick="document.getElementById('selectedFile').click();" />
-            <input type="text" name="title" placeholder="Название...">
-            <input name="price" type="number" min="0.1" step="0.1" placeholder="Цена..."/>
-            <textarea name="description" placeholder="Описание..."></textarea>
+            <input id="title" type="text" name="title" placeholder="Название...">
+            <input id="price" name="price" type="number" min="0.1" step="0.1" placeholder="Цена..."/>
+            <textarea id="description" name="description" placeholder="Описание..."></textarea>
             <button class="btn success" type="submit">Добавить</button>
         </form>
     </div>
@@ -27,5 +27,6 @@
 
 <!--<footer th:insert="~{blocks/footer :: footer}"></footer>-->
 <script th:src="@{~/js/imagePreview.js}"></script>
+<script th:src="@{~/js/formAddingStorage.js}"></script>
 </body>
 </html>
