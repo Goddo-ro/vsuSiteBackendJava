@@ -1,9 +1,7 @@
 const items = document.getElementsByClassName("item-card");
 const searchBar = document.getElementById("search");
 
-searchBar.addEventListener("input", (event) => {
-    const search = searchBar.value;
-
+const selectItems = (search) => {
     for (let i = 0; i < items.length; i++) {
         const item = items[i];
         const title = item.querySelector(".coffee-title").innerHTML;
@@ -14,4 +12,16 @@ searchBar.addEventListener("input", (event) => {
             item.style.display = "block";
         }
     }
+}
+
+if (localStorage.getItem("search") !== null) {
+    searchBar.value = localStorage.getItem("search");
+    selectItems(searchBar.value);
+}
+
+searchBar.addEventListener("input", (event) => {
+    const search = searchBar.value;
+    localStorage.setItem("search", search);
+
+    selectItems(search);
 });
