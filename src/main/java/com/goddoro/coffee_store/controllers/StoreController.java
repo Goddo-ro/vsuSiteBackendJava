@@ -1,7 +1,7 @@
 package com.goddoro.coffee_store.controllers;
 
-import com.goddoro.coffee_store.models.Image;
-import com.goddoro.coffee_store.models.Item;
+import com.goddoro.coffee_store.entity.Image;
+import com.goddoro.coffee_store.entity.Item;
 import com.goddoro.coffee_store.repo.ImageRepository;
 import com.goddoro.coffee_store.repo.ItemRepository;
 import jakarta.annotation.Resource;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 @Controller
 public class StoreController {

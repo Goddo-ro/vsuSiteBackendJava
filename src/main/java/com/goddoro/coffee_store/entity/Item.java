@@ -1,4 +1,4 @@
-package com.goddoro.coffee_store.models;
+package com.goddoro.coffee_store.entity;
 
 import jakarta.persistence.*;
 

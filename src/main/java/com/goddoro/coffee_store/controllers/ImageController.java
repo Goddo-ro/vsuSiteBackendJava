@@ -1,6 +1,6 @@
 package com.goddoro.coffee_store.controllers;
 
-import com.goddoro.coffee_store.models.Image;
+import com.goddoro.coffee_store.entity.Image;
 import com.goddoro.coffee_store.repo.ImageRepository;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletResponse;
