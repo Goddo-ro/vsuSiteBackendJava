@@ -1,4 +1,4 @@
-package com.goddoro.coffee_store.controllers;
+package com.goddoro.coffee_store.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

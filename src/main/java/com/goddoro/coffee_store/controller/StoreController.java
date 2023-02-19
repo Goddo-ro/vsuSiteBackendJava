@@ -1,9 +1,9 @@
-package com.goddoro.coffee_store.controllers;
+package com.goddoro.coffee_store.controller;
 
 import com.goddoro.coffee_store.entity.Image;
 import com.goddoro.coffee_store.entity.Item;
-import com.goddoro.coffee_store.repo.ImageRepository;
-import com.goddoro.coffee_store.repo.ItemRepository;
+import com.goddoro.coffee_store.repository.ImageRepository;
+import com.goddoro.coffee_store.repository.ItemRepository;
 import jakarta.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
