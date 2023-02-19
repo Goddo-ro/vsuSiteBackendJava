@@ -1,6 +1,7 @@
 package com.goddoro.coffee_store.controller;
 
 import com.goddoro.coffee_store.service.UserService;
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AdminController {
-    @Autowired
+    @Resource(name="userService")
     private UserService userService;
 
     @GetMapping("/admin")
